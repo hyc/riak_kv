@@ -163,8 +163,7 @@ configure(load) ->
     application:set_env(riak_kv, storage_backend, riak_kv_memory_backend),
     application:set_env(riak_kv, test, true),
     application:set_env(riak_kv, vnode_vclocks, true),
-    application:set_env(riak_kv, delete_mode, immediate),
-    application:set_env(riak_kv, legacy_keylisting, false);
+    application:set_env(riak_kv, delete_mode, immediate);
 configure(_) ->
     ok.
 
@@ -219,4 +218,3 @@ wait_for_replies(Sink, ReqId) ->
     end.
 
 -endif. % EQC
-
